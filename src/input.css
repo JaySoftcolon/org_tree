@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+.org-tree-node-label-inner {
+    padding: 0px !important;
+}
+
+::after,
+::before,
+.org-tree-node-btn {
+    border-color: black !important;
+}
