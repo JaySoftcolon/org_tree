@@ -1,6 +1,14 @@
-import { AdviserPlacementType, ChildrenPlacementType, Colors, Enabled, GroupByType, ItemType, PageFitMode } from 'basicprimitives';
-import React, { Component } from 'react';
-import OrgTreeDemo from './OrgTreeDemo';
+import {
+  AdviserPlacementType,
+  ChildrenPlacementType,
+  Colors,
+  Enabled,
+  GroupByType,
+  ItemType,
+  PageFitMode,
+} from "basicprimitives";
+import React, { Component } from "react";
+import OrgTreeDemo from "./OrgTreeDemo";
 
 class Sample extends Component {
   constructor(props) {
@@ -12,8 +20,9 @@ class Sample extends Component {
       parent: null,
       title: "Title A",
       description: "Description A",
-      image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
-    }
+      image:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+    };
     items.push(rootItem);
 
     items.push({
@@ -24,7 +33,7 @@ class Sample extends Component {
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Right,
       groupTitle: "Audit",
-      groupTitleColor: Colors.Olive
+      groupTitleColor: Colors.Olive,
     });
 
     items.push({
@@ -35,7 +44,7 @@ class Sample extends Component {
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Left,
       groupTitle: "Audit",
-      groupTitleColor: Colors.Olive
+      groupTitleColor: Colors.Olive,
     });
 
     for (var index = 3; index <= 10; index += 2) {
@@ -47,17 +56,17 @@ class Sample extends Component {
         itemType: ItemType.SubAdviser,
         adviserPlacementType: AdviserPlacementType.Left,
         groupTitle: "Sub Adviser",
-        groupTitleColor: Colors.Red
+        groupTitleColor: Colors.Red,
       });
       items.push({
-        id: (index + 1),
+        id: index + 1,
         parent: 2,
         title: "Sub Adviser",
         description: "Sub Adviser Description",
         itemType: ItemType.SubAdviser,
         adviserPlacementType: AdviserPlacementType.Right,
         groupTitle: "Sub Adviser",
-        groupTitleColor: Colors.Red
+        groupTitleColor: Colors.Red,
       });
     }
 
@@ -67,9 +76,8 @@ class Sample extends Component {
       isVisible: false,
       title: "Aggregator",
       description: "Invisible aggregator",
-      childrenPlacementType: ChildrenPlacementType.Horizontal
+      childrenPlacementType: ChildrenPlacementType.Horizontal,
     });
-
 
     items.push({
       id: 13,
@@ -79,9 +87,8 @@ class Sample extends Component {
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Right,
       groupTitle: "Audit",
-      groupTitleColor: Colors.Olive
+      groupTitleColor: Colors.Olive,
     });
-
 
     items.push({
       id: 14,
@@ -91,7 +98,7 @@ class Sample extends Component {
       itemType: ItemType.Assistant,
       adviserPlacementType: AdviserPlacementType.Left,
       groupTitle: "Audit",
-      groupTitleColor: Colors.Olive
+      groupTitleColor: Colors.Olive,
     });
 
     for (index = 15; index <= 21; index += 1) {
@@ -103,7 +110,7 @@ class Sample extends Component {
           isVisible: false,
           title: "Aggregator 2",
           description: "Invisible aggregator 2",
-          childrenPlacementType: ChildrenPlacementType.Matrix
+          childrenPlacementType: ChildrenPlacementType.Matrix,
         });
       } else {
         items.push({
@@ -111,7 +118,7 @@ class Sample extends Component {
           parent: 12,
           title: index.toString() + " Full Time",
           description: index.toString() + " Description",
-          groupTitle: "Full Time"
+          groupTitle: "Full Time",
         });
       }
     }
@@ -123,13 +130,13 @@ class Sample extends Component {
         title: index.toString() + " Part Time",
         description: index.toString() + " Description",
         groupTitle: "Part Time",
-        groupTitleColor: Colors.Green
+        groupTitleColor: Colors.Green,
       });
-    };
+    }
 
     this.state = {
-      items
-    }
+      items,
+    };
   }
   render() {
     const config = {
@@ -147,13 +154,13 @@ class Sample extends Component {
       buttonsPanelSize: 48,
       itemTitleSecondFontColor: Colors.White,
       leavesPlacementType: ChildrenPlacementType.Matrix,
-      arrowsDirection: GroupByType.Children
+      arrowsDirection: GroupByType.Children,
     };
 
     return (
       // <OrgDiagram centerOnCursor={true} config={config} />
       <OrgTreeDemo />
-    )
+    );
   }
 }
 

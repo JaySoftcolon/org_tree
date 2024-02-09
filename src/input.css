@@ -5,6 +5,7 @@
 #root {
     width: 100vw;
     height: 100vh;
+    padding: 20px;
 }
 
 .org-tree-node-label-inner {
@@ -15,4 +16,12 @@
 ::before,
 .org-tree-node-btn {
     border-color: black !important;
+}
+
+.react-transform-wrapper, .react-transform-component{
+    width: inherit !important;
+    height: inherit !important;
+}
+.react-transform-wrapper {
+    border: 2px dashed blue;
 }
